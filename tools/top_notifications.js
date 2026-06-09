@@ -1,8 +1,16 @@
 const axios = require('axios');
 
 async function fetchNotifications(apiUrl, studentID) {
-  const res = await axios.get(`${apiUrl}?studentID=${studentID}&limit=500&page=1`, { timeout: 10000 });
-  return res.data && res.data.data ? res.data.data : [];
+  const url = `${apiUrl}?studentID=${studentID}&limit=500&page=1`;
+  const token = process.env.ACCESS_TOKEN || process.env.EVALUATION_TOKEN || null;
+  const opts = { timeout: 10000 };
+  if (token) opts.headers = { Authorization: `Bearer ${token}` };
+  const res = await axios.get(url, opts);
+  // support variants: { data: [...] } or { notifications: [...] } or direct array
+  if (res.data && Array.isArray(res.data)) return res.data;
+  if (res.data && Array.isArray(res.data.data)) return res.data.data;
+  if (res.data && Array.isArray(res.data.notifications)) return res.data.notifications;
+  return [];
 }
 
 function scoreNotification(n) {

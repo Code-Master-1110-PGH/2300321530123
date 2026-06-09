@@ -1,0 +1,16 @@
+REQUEST URL -> http://4.224.186.213/evaluation-service/notifications?studentID=1042&limit=10&page=1
+TOKEN LEN -> 763
+STATUS 200
+HEADERS Object [AxiosHeaders] {
+  date: 'Tue, 09 Jun 2026 07:27:03 GMT',
+  'content-type': 'application/json; charset=utf-8',
+  'content-length': '1287',
+  connection: 'keep-alive',
+  'access-control-allow-credentials': 'true',
+  'access-control-allow-headers': 'Content-Type, Content-Length, Accept-Encoding, X-CSRF-Token, Authorization, accept, origin, Cache-Control, X-Requested-With',
+  'access-control-allow-methods': 'POST, OPTIONS, GET, PUT',
+  'access-control-allow-origin': '*',
+  'x-content-type-options': 'nosniff',
+  'x-xss-protection': '1;mode=block'
+}
+DATA PREVIEW {"notifications":[{"ID":"75ced1a4-5fa1-4f80-9677-68d741c54d5d","Type":"Placement","Message":"Broadcom Inc. hiring","Timestamp":"2026-06-08 07:26:54"},{"ID":"51545457-57d3-4aaa-913b-c0430b44d417","Type":"Placement","Message":"Eli Lilly and Company hiring","Timestamp":"2026-06-08 15:26:37"},{"ID":"4855efbc-4b37-467a-ba59-0616319491dd","Type":"Result","Message":"project-review","Timestamp":"2026-06-08 22:56:20"},{"ID":"274929da-1c67-4692-841e-246d136f3a02","Type":"Event","Message":"tech-fest","Timestamp":"2026-06-09 00:26:03"},{"ID":"5767172a-47ec-4226-bd8a-f367e5969721","Type":"Event","Message":"induction","Timestamp":"2026-06-08 17:25:46"},{"ID":"0d3fc77d-ea45-4730-a146-30b2202270e6","Type":"Result","Message":"internal","Timestamp":"2026-06-08 21:55:29"},{"ID":"9658f8cb-2129-407a-ab57-bfeeda53fd69","Type":"Placement","Message":"Berkshire Hathaway Inc. hiring","Timestamp":"2026-06-09 06:25:12"},{"ID":"628e4d41-e783-459b-bf65-b38765464754","Type":"Event","Message":"traditional-day","Times

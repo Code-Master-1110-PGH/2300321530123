@@ -4,7 +4,7 @@
  */
 
 import { createContext, useState, useCallback } from 'react';
-import Logger from '../../common/middleware/logger';
+import Logger from '../common/middleware/logger';
 
 const logger = new Logger();
 

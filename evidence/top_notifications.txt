@@ -1,0 +1,11 @@
+Top 10 notifications for 1042
+1. [Placement] Marvell Technology Inc. hiring (id=912d4f03-5608-4c73-89b0-7929f76657a3) Timestamp=2026-06-08 17:27:45 score=3000000.01
+2. [Placement] Eli Lilly and Company hiring (id=51545457-57d3-4aaa-913b-c0430b44d417) Timestamp=2026-06-08 15:26:37 score=3000000.01
+3. [Placement] Broadcom Inc. hiring (id=75ced1a4-5fa1-4f80-9677-68d741c54d5d) Timestamp=2026-06-08 07:26:54 score=3000000.01
+4. [Result] project-review (id=4855efbc-4b37-467a-ba59-0616319491dd) Timestamp=2026-06-08 22:56:20 score=2000000.02
+5. [Result] internal (id=0d3fc77d-ea45-4730-a146-30b2202270e6) Timestamp=2026-06-08 21:55:29 score=2000000.02
+6. [Result] internal (id=7491acb7-7631-4943-85b5-298798273cca) Timestamp=2026-06-08 13:57:11 score=2000000.01
+7. [Result] external (id=6ebbf8cb-b011-45aa-99ed-ea5585176d0a) Timestamp=2026-06-08 12:27:28 score=2000000.01
+8. [Event] tech-fest (id=274929da-1c67-4692-841e-246d136f3a02) Timestamp=2026-06-09 00:26:03 score=1000000.02
+9. [Event] induction (id=5767172a-47ec-4226-bd8a-f367e5969721) Timestamp=2026-06-08 17:25:46 score=1000000.01
+10. [Event] cult-fest (id=5ef71a9b-3f70-4481-90d1-b09f98c605cc) Timestamp=2026-06-08 14:58:02 score=1000000.01

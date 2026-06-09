@@ -4,8 +4,8 @@
  */
 
 import { useState, useCallback } from 'react';
-import Logger from '../../common/middleware/logger';
-import AuthService from '../../common/auth/authService';
+import Logger from '../common/middleware/logger';
+import AuthService from '../common/auth/authService';
 
 interface AuthState {
   accessToken: string | null;

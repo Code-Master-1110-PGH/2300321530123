@@ -2,8 +2,8 @@ import 'dotenv/config';
 import express, { Express, Request, Response, NextFunction } from 'express';
 import cors from 'cors';
 import helmet from 'helmet';
-import Logger from '../common/middleware/logger';
-import { BACKEND_PORT, NODE_ENV } from '../common/config/constants';
+import Logger from '../../common/middleware/logger';
+import { BACKEND_PORT, NODE_ENV } from '../../common/config/constants';
 
 const app: Express = express();
 const logger = new Logger();
@@ -29,13 +29,13 @@ app.get('/health', (req: Request, res: Response) => {
 });
 
 // API Routes (To be implemented)
-app.use('/api/auth', (req: Request, res: Response) => {
-  res.status(501).json({ error: 'Not implemented yet' });
-});
+import authRoute from './route/authRoute';
+import logRoute from './route/logRoute';
+import notificationRoute from './route/notificationRoute';
 
-app.use('/api/logs', (req: Request, res: Response) => {
-  res.status(501).json({ error: 'Not implemented yet' });
-});
+app.use('/api/auth', authRoute);
+app.use('/api/logs', logRoute);
+app.use('/api/notifications', notificationRoute);
 
 // Error handling middleware
 app.use((err: any, req: Request, res: Response, next: NextFunction) => {

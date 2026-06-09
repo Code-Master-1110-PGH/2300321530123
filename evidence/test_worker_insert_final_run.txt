@@ -1,0 +1,18 @@
+C:\Users\Mridul Mishra\Desktop\Afford\Code\backend\node_modules\ts-node\src\index.ts:859
+    return new TSError(diagnosticText, diagnosticCodes, diagnostics);
+           ^
+TSError: Γ¿» Unable to compile TypeScript:
+tools/test_worker_insert.ts(1,42): error TS5097: An import path can only end with a '.ts' extension when 'allowImportingTsExtensions' is enabled.
+
+    at createTSError (C:\Users\Mridul Mishra\Desktop\Afford\Code\backend\node_modules\ts-node\src\index.ts:859:12)
+    at reportTSError (C:\Users\Mridul Mishra\Desktop\Afford\Code\backend\node_modules\ts-node\src\index.ts:863:19)
+    at getOutput (C:\Users\Mridul Mishra\Desktop\Afford\Code\backend\node_modules\ts-node\src\index.ts:1077:36)
+    at Object.compile (C:\Users\Mridul Mishra\Desktop\Afford\Code\backend\node_modules\ts-node\src\index.ts:1433:41)
+    at Module.m._compile (C:\Users\Mridul Mishra\Desktop\Afford\Code\backend\node_modules\ts-node\src\index.ts:1617:30)
+    at node:internal/modules/cjs/loader:1839:10
+    at Object.require.extensions.<computed> [as .ts] (C:\Users\Mridul Mishra\Desktop\Afford\Code\backend\node_modules\ts-node\src\index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1441:32)
+    at Function._load (node:internal/modules/cjs/loader:1263:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14) {
+  diagnosticCodes: [ 5097 ]
+}

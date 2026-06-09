@@ -1,0 +1,20 @@
+  % Total    % Received % Xferd  Average Speed  Time    Time    Time   Current
+                                 Dload  Upload  Total   Spent   Left   Speed
+
+  0      0   0      0   0      0      0      0                              0
+100   1283 100   1283   0      0   9960      0                              0
+100   1283 100   1283   0      0   9951      0                              0
+100   1283 100   1283   0      0   9939      0                              0
+HTTP/1.1 200 OK
+Date: Tue, 09 Jun 2026 07:25:59 GMT
+Content-Type: application/json; charset=utf-8
+Content-Length: 1283
+Connection: keep-alive
+Access-Control-Allow-Credentials: true
+Access-Control-Allow-Headers: Content-Type, Content-Length, Accept-Encoding, X-CSRF-Token, Authorization, accept, origin, Cache-Control, X-Requested-With
+Access-Control-Allow-Methods: POST, OPTIONS, GET, PUT
+Access-Control-Allow-Origin: *
+X-Content-Type-Options: nosniff
+X-XSS-Protection: 1;mode=block
+
+{"notifications":[{"ID":"5767172a-47ec-4226-bd8a-f367e5969721","Type":"Event","Message":"induction","Timestamp":"2026-06-08 17:25:46"},{"ID":"0d3fc77d-ea45-4730-a146-30b2202270e6","Type":"Result","Message":"internal","Timestamp":"2026-06-08 21:55:29"},{"ID":"9658f8cb-2129-407a-ab57-bfeeda53fd69","Type":"Placement","Message":"Berkshire Hathaway Inc. hiring","Timestamp":"2026-06-09 06:25:12"},{"ID":"628e4d41-e783-459b-bf65-b38765464754","Type":"Event","Message":"traditional-day","Timestamp":"2026-06-08 15:24:55"},{"ID":"c6b0e84a-6eea-48ba-97b3-bd23cc3d5ad8","Type":"Result","Message":"internal","Timestamp":"2026-06-09 03:24:38"},{"ID":"61d39d95-c03d-4757-9b7f-6c076c7c21ea","Type":"Placement","Message":"Booking Holdings Inc. hiring","Timestamp":"2026-06-08 20:54:21"},{"ID":"b06c0c0b-97f6-42df-a416-9466e153815e","Type":"Result","Message":"project-review","Timestamp":"2026-06-09 03:54:04"},{"ID":"2e99bc74-73ca-4df2-b4db-352a0558ffac","Type":"Result","Message":"mid-sem","Timestamp":"2026-06-08 16:53:47"},{"ID":"555ea627-cc05-40f0-92ec-5104c7d63269","Type":"Placement","Message":"Microsoft Corporation hiring","Timestamp":"2026-06-09 05:53:30"},{"ID":"a9ca820d-9117-4509-b16d-e87cf474622a","Type":"Placement","Message":"Apple Inc. hiring","Timestamp":"2026-06-09 03:23:13"}]}

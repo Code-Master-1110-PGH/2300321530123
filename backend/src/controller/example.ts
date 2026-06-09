@@ -4,7 +4,7 @@
  */
 
 import { Request, Response } from 'express';
-import Logger from '../../common/middleware/logger';
+import Logger from '../../../common/middleware/logger';
 
 const logger = new Logger();
 

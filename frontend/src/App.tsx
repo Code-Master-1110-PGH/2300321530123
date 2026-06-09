@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import Logger from '../common/middleware/logger';
-import AuthService from '../common/auth/authService';
+import Logger from './common/middleware/logger';
+import AuthService from './common/auth/authService';
+import PriorityInbox from './components/PriorityInbox';
 import './App.css';
 
 const App: React.FC = () => {
@@ -10,6 +11,8 @@ const App: React.FC = () => {
   const [logs, setLogs] = useState<any[]>([]);
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
+  const [showInbox, setShowInbox] = useState(false);
+  const [notifications, setNotifications] = useState<any[]>([]);
 
   const logger = new Logger();
   const authService = new AuthService();
@@ -29,6 +32,16 @@ const App: React.FC = () => {
     } finally {
       setLoading(false);
     }
+  };
+
+  const loadSampleNotifications = () => {
+    const sample = [
+      { id: '1', type: 'message', priority: 80, payload: { text: 'Welcome to Priority Inbox' }, created_at: new Date().toISOString() },
+      { id: '2', type: 'alert', priority: 95, payload: { text: 'Account activity detected' }, created_at: new Date().toISOString() },
+      { id: '3', type: 'message', priority: 30, payload: { text: 'Weekly summary' }, created_at: new Date().toISOString() },
+    ];
+    setNotifications(sample);
+    setShowInbox(true);
   };
 
   return (
@@ -91,6 +104,13 @@ const App: React.FC = () => {
             </div>
           </section>
         )}
+
+        <section style={{ padding: 12 }}>
+          <h2>Priority Inbox (Stage 7)</h2>
+          <button onClick={loadSampleNotifications} className="btn-primary">Load sample inbox</button>
+          <button style={{ marginLeft: 8 }} onClick={() => setShowInbox((s) => !s)} className="btn-secondary">Toggle Inbox</button>
+          {showInbox && <PriorityInbox items={notifications} />}
+        </section>
       </main>
     </div>
   );

@@ -1,0 +1,24 @@
+node:internal/modules/cjs/loader:1386
+  throw err;
+  ^
+
+Error: Cannot find module './test_worker_insert.ts'
+Require stack:
+- C:\Users\Mridul Mishra\Desktop\Afford\Code\backend\tools\imaginaryUncacheableRequireResolveScript
+    at Function._resolveFilename (node:internal/modules/cjs/loader:1383:15)
+    at Function.resolve (node:internal/modules/helpers:157:19)
+    at requireResolveNonCached (C:\Users\Mridul Mishra\Desktop\Afford\Code\backend\node_modules\ts-node\dist\bin.js:549:16)
+    at getProjectSearchDir (C:\Users\Mridul Mishra\Desktop\Afford\Code\backend\node_modules\ts-node\dist\bin.js:519:40)
+    at phase3 (C:\Users\Mridul Mishra\Desktop\Afford\Code\backend\node_modules\ts-node\dist\bin.js:267:27)
+    at bootstrap (C:\Users\Mridul Mishra\Desktop\Afford\Code\backend\node_modules\ts-node\dist\bin.js:47:30)
+    at main (C:\Users\Mridul Mishra\Desktop\Afford\Code\backend\node_modules\ts-node\dist\bin.js:33:12)
+    at Object.<anonymous> (C:\Users\Mridul Mishra\Desktop\Afford\Code\backend\node_modules\ts-node\dist\bin.js:579:5)
+    at Module._compile (node:internal/modules/cjs/loader:1706:14)
+    at Object..js (node:internal/modules/cjs/loader:1839:10) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    'C:\\Users\\Mridul Mishra\\Desktop\\Afford\\Code\\backend\\tools\\imaginaryUncacheableRequireResolveScript'
+  ]
+}
+
+Node.js v22.20.0

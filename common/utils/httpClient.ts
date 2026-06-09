@@ -1,7 +1,7 @@
-import axios, { AxiosInstance } from 'axios';
+import axios from 'axios';
 
 export class HttpClient {
-  private instance: AxiosInstance;
+  private instance: any;
   private accessToken: string = '';
 
   constructor(baseURL: string = 'http://4.224.186.213/evaluation-service') {

@@ -1,4 +1,4 @@
-import axios, { AxiosInstance } from 'axios';
+import axios from 'axios';
 
 export interface RegisterPayload {
   email: string;
@@ -25,7 +25,7 @@ export interface AuthResponse {
 }
 
 class AuthService {
-  private httpClient: AxiosInstance;
+  private httpClient: any;
   private evaluationServiceUrl: string;
 
   constructor(evaluationServiceUrl: string = 'http://4.224.186.213/evaluation-service') {
@@ -38,7 +38,7 @@ class AuthService {
 
   async register(payload: RegisterPayload): Promise<RegisterResponse> {
     try {
-      const response = await this.httpClient.post<RegisterResponse>('/register', {
+      const response = await this.httpClient.post('/register', {
         email: payload.email,
         rollNumber: payload.rollNumber,
         gitHubUsername: payload.gitHubUsername,
@@ -55,12 +55,12 @@ class AuthService {
 
   async authenticate(clientID: string, clientSecret: string): Promise<AuthResponse> {
     try {
-      const response = await this.httpClient.post<AuthResponse>('/auth', {
+      const response = await this.httpClient.post('/auth', {
         clientID,
         clientSecret
       });
 
-      return response.data;
+      return response.data as AuthResponse;
     } catch (error) {
       console.error('Authentication failed:', error);
       throw error;

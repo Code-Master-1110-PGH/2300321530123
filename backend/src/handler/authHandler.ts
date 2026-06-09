@@ -1,6 +1,6 @@
 import { Request, Response } from 'express';
-import Logger from '../../common/middleware/logger';
-import AuthService from '../../common/auth/authService';
+import Logger from '../../../common/middleware/logger';
+import AuthService from '../../../common/auth/authService';
 
 const logger = new Logger();
 const authService = new AuthService();
