@@ -44,6 +44,23 @@ const App: React.FC = () => {
     setShowInbox(true);
   };
 
+  const fetchTopNotifications = async (opts?: { limit?: number; page?: number; notification_type?: string }) => {
+    try {
+      const q = new URLSearchParams();
+      if (opts?.limit) q.set('limit', String(opts.limit));
+      if (opts?.page) q.set('page', String(opts.page));
+      if (opts?.notification_type) q.set('notification_type', opts.notification_type);
+      const url = `/api/notifications/top?${q.toString()}`;
+      const resp = await fetch(url);
+      if (!resp.ok) throw new Error('Failed to fetch');
+      const body = await resp.json();
+      setNotifications(body.items || []);
+      setShowInbox(true);
+    } catch (err: any) {
+      setError(err.message || 'fetch failed');
+    }
+  };
+
   return (
     <div className="app-container">
       <header className="app-header">
@@ -109,6 +126,13 @@ const App: React.FC = () => {
           <h2>Priority Inbox (Stage 7)</h2>
           <button onClick={loadSampleNotifications} className="btn-primary">Load sample inbox</button>
           <button style={{ marginLeft: 8 }} onClick={() => setShowInbox((s) => !s)} className="btn-secondary">Toggle Inbox</button>
+          <button style={{ marginLeft: 8 }} onClick={() => fetchTopNotifications({ limit: 10 })} className="btn-primary">Fetch live top-10</button>
+          <select onChange={(e) => fetchTopNotifications({ limit: 10, notification_type: e.target.value })} style={{ marginLeft: 8 }} defaultValue="">
+            <option value="">All types</option>
+            <option value="Placement">Placement</option>
+            <option value="Result">Result</option>
+            <option value="Event">Event</option>
+          </select>
           {showInbox && <PriorityInbox items={notifications} />}
         </section>
       </main>

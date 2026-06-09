@@ -13,24 +13,38 @@ router.post('/', serviceAuthMiddleware, createNotifications);
 export default router;
 
  
- // GET /api/notifications/top?limit=10
- router.get('/top', async (req, res) => {
-	 try {
-		 const limit = Math.min(10, Number(req.query.limit) || 10);
-		 // If a cache or DB is configured, we would query it here. For portability
-		 // return a sample set when services are not available.
-		 const now = Date.now();
-		 const sample = Array.from({ length: limit }).map((_, i) => ({
-			 id: `sample-${i + 1}`,
-			 user_id: `user-${(i % 3) + 1}`,
-			 type: i % 2 === 0 ? 'message' : 'alert',
-			 priority: 100 - i * 5,
-			 payload: { text: `Sample notification ${i + 1}` },
-			 created_at: new Date(now - i * 1000).toISOString(),
-		 }));
- 
-		 return res.json({ items: sample, count: sample.length });
-	 } catch (err) {
-		 return res.status(500).json({ error: 'failed to fetch top notifications' });
-	 }
- });
+// GET /api/notifications/top?limit=10&page=1&notification_type=Placement
+router.get('/top', async (req, res) => {
+	try {
+		const limit = Math.min(100, Number(req.query.limit) || 10);
+		const page = Math.max(1, Number(req.query.page) || 1);
+		const notificationType = (req.query.notification_type || '').toString();
+
+		// If a cache or DB is configured, query it here. For portability we
+		// return a filtered sample set when services are not available.
+		const now = Date.now();
+		let sample = Array.from({ length: 200 }).map((_, i) => ({
+			id: `sample-${i + 1}`,
+			user_id: `user-${(i % 5) + 1}`,
+			type: i % 3 === 0 ? 'Placement' : i % 3 === 1 ? 'Result' : 'Event',
+			priority: 100 - (i % 50),
+			payload: { text: `Sample notification ${i + 1}` },
+			created_at: new Date(now - i * 1000).toISOString(),
+			isRead: i % 4 === 0,
+		}));
+
+		if (notificationType) {
+			sample = sample.filter((s) => s.type.toLowerCase() === notificationType.toLowerCase());
+		}
+
+		// simple priority sorting: priority desc, then newest
+		sample.sort((a, b) => (b.priority - a.priority) || (new Date(b.created_at).getTime() - new Date(a.created_at).getTime()));
+
+		const start = (page - 1) * limit;
+		const items = sample.slice(start, start + limit);
+
+		return res.json({ items, count: sample.length, page, limit });
+	} catch (err) {
+		return res.status(500).json({ error: 'failed to fetch top notifications' });
+	}
+});
