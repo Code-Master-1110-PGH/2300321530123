@@ -1,0 +1,4 @@
+Status: 404 Not Found
+{
+  "message": "provided fields does not match with any of our registered client"
+}

@@ -1,11 +1,13 @@
 import { Request, Response, NextFunction } from 'express';
-import Logger from '../../common/middleware/logger';
+import Logger from '../../../common/middleware/logger';
 
 const logger = new Logger();
 
 export const authMiddleware = async (req: Request, res: Response, next: NextFunction): Promise<void> => {
   try {
     const authHeader = req.headers.authorization;
+    console.log('authMiddleware: incoming Authorization header length=', authHeader ? authHeader.length : 0);
+    if (authHeader) console.log('authMiddleware: preview=', authHeader.slice(0, 80));
 
     if (!authHeader || !authHeader.startsWith('Bearer ')) {
       res.status(401).json({ error: 'Missing or invalid authorization token' });

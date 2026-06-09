@@ -1,0 +1,5 @@
+Status: 200 OK
+{
+  "logID": "546e30cf-94bb-46da-995d-d3ad2f6d4036",
+  "message": "log created successfully"
+}

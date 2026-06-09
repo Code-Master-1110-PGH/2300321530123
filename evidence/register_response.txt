@@ -1,0 +1,4 @@
+Status: 409 Conflict
+{
+  "message": "email already exists"
+}

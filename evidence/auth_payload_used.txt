@@ -1,0 +1,8 @@
+{
+  "name": "mridul mishra",
+  "email": "mridul.23b1531172@abes.ac.in",
+  "rollNo": "2300321530123",
+  "accessCode": "cXuqht",
+  "clientID": "2f42dfd0-14ba-4e2d-b9df-c285194900db",
+  "clientSecret": "VWZUdwSXRdfjQDfw"
+}

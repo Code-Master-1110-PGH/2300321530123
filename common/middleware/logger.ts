@@ -1,4 +1,4 @@
-import axios, { AxiosInstance } from 'axios';
+import axios from 'axios';
 
 export interface LogPayload {
   stack: 'backend' | 'frontend';
@@ -21,7 +21,7 @@ const ALLOWED_PACKAGES = {
 };
 
 class Logger {
-  private httpClient: AxiosInstance;
+  private httpClient: any;
   private accessToken: string = '';
   private evaluationServiceUrl: string;
 
@@ -70,14 +70,19 @@ class Logger {
         message: payload.message
       };
 
-      const response = await this.httpClient.post<LogResponse>('/logs', logPayload, {
+      if (!this.accessToken || this.accessToken.trim().length === 0) {
+        console.warn('Logger: no access token set, skipping remote log (local only)');
+        return { logID: `local-${Date.now()}`, message: 'skipped remote log' } as LogResponse;
+      }
+
+      const response: any = await this.httpClient.post('/logs', logPayload, {
         headers: {
-          'Authorization': `Bearer ${this.accessToken}`,
+          Authorization: `Bearer ${this.accessToken}`,
           'Content-Type': 'application/json'
         }
       });
 
-      return response.data;
+      return response.data as LogResponse;
     } catch (error) {
       console.error('Failed to send log:', error);
       throw error;
